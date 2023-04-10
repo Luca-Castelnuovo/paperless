@@ -56,7 +56,7 @@ services:
       PAPERLESS_TIKA_ENDPOINT: http://tika:9998
     labels:
       traefik.enable: true
-      traefik.http.routers.authelia.entryPoints: https
+      traefik.http.routers.paperless.entryPoints: https
     networks:
       - paperless-network
       - traefik-proxy
