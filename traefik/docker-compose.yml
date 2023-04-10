@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - traefik-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/traefik.yml:/traefik.yml:ro
+      - ./config/acme.json:/acme.json
+      - ./config/config.yml:/config.yml:ro
+    labels:
+      traefik.enable: true
+      traefik.http.routers.traefik.entrypoints: https
+      traefik.http.routers.traefik.service: api@internal
+    environment:
+      CF_DNS_API_TOKEN: ${TRAEFIK_CLOUDFLARE_TOKEN:?error}
+
+networks:
+  traefik-proxy:
+    driver: bridge
+    external: true
