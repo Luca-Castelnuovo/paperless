@@ -57,7 +57,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.paperless.entryPoints: https
-      traefik.http.routers.cal.rule: Host(`paperless.castelnuovo.dev`)
+      traefik.http.routers.paperless.rule: Host(`paperless.castelnuovo.dev`)
     networks:
       - paperless-network
       - traefik-proxy
