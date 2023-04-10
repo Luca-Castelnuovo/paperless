@@ -6,7 +6,7 @@ serversTransport:
   insecureSkipVerify: true
 
 api:
-  dashboard: true
+  dashboard: false
 
 entryPoints:
   http:

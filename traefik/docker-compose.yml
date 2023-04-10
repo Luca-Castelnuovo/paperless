@@ -18,10 +18,6 @@ services:
       - ./config/traefik.yml:/traefik.yml:ro
       - ./config/acme.json:/acme.json
       - ./config/config.yml:/config.yml:ro
-    labels:
-      traefik.enable: true
-      traefik.http.routers.traefik.entrypoints: https
-      traefik.http.routers.traefik.service: api@internal
     environment:
       CF_DNS_API_TOKEN: ${TRAEFIK_CLOUDFLARE_TOKEN:?error}
 
