@@ -1,6 +1,6 @@
 http:
   middlewares:
-    auth: # TODO: enable auth middleware
+    auth:
       forwardauth:
         address: http://authelia:9091/api/verify?rd=https://authelia.castelnuovo.dev/
         trustForwardHeader: true

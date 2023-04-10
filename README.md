@@ -38,6 +38,5 @@ docker compose up -d && cd ..
 
 # Watchtower
 cd watchtower
-cp .env.example .env && nano .env
 docker compose up -d && cd ..
 ```
