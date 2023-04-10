@@ -4,8 +4,7 @@ Paperless-NGX for Castelnuovo
 ### Server installation
 
 ```bash
-apt update -y
-apt upgrade -y
+apt update -y && apt upgrade -y
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 ./get-docker.sh && rm get-docker.sh

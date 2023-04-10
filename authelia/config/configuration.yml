@@ -1,9 +1,6 @@
 access_control:
   default_policy: deny
   rules:
-    - domain: castelnuovo.dev
-      policy: bypass
-
     - domain: authelia.castelnuovo.dev
       policy: bypass
 
