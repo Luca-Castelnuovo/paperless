@@ -1,15 +1,5 @@
 http:
   middlewares:
-    auth:
-      forwardauth:
-        address: http://authelia:9091/api/verify?rd=https://authelia.castelnuovo.dev/
-        trustForwardHeader: true
-        authResponseHeaders:
-          - Remote-User
-          - Remote-Groups
-          - Remote-Name
-          - Remote-Email
-
     securityHeaders:
       headers:
         customResponseHeaders:

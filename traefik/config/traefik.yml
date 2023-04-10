@@ -54,7 +54,6 @@ entryPoints:
               - "*.castelnuovo.dev"
       middlewares:
         - securityHeaders@file
-        - auth@file
 
 providers:
   providersThrottleDuration: 2s
